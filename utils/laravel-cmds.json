@@ -1,0 +1,85 @@
+{
+    "commands": [
+      {
+        "command": "php artisan serve",
+        "description": "Starts a local development server at http://localhost:8000."
+      },
+      {
+        "command": "php artisan migrate",
+        "description": "Runs the database migrations to apply schema changes."
+      },
+      {
+        "command": "php artisan make:model ModelName",
+        "description": "Creates a new Eloquent model file."
+      },
+      {
+        "command": "php artisan make:controller ControllerName",
+        "description": "Generates a new controller file."
+      },
+      {
+        "command": "php artisan migrate:rollback",
+        "description": "Rolls back the last batch of database migrations."
+      },
+      {
+        "command": "php artisan db:seed",
+        "description": "Seeds the database with records defined in seed classes."
+      },
+      {
+        "command": "php artisan tinker",
+        "description": "Opens an interactive shell to interact with your Laravel application."
+      },
+      {
+        "command": "php artisan route:list",
+        "description": "Displays a list of all registered routes in the application."
+      },
+      {
+        "command": "php artisan make:migration MigrationName",
+        "description": "Creates a new migration file for the database schema."
+      },
+      {
+        "command": "php artisan make:seeder SeederName",
+        "description": "Generates a new seeder class for inserting data into the database."
+      },
+      {
+        "command": "php artisan migrate:fresh",
+        "description": "Drops all tables and re-runs all migrations from scratch."
+      },
+      {
+        "command": "php artisan make:middleware MiddlewareName",
+        "description": "Creates a new middleware class to handle request filtering logic."
+      },
+      {
+        "command": "php artisan config:cache",
+        "description": "Creates a cache file for faster configuration loading."
+      },
+      {
+        "command": "php artisan cache:clear",
+        "description": "Clears the application cache."
+      },
+      {
+        "command": "php artisan queue:work",
+        "description": "Starts processing jobs in the queue."
+      },
+      {
+        "command": "php artisan storage:link",
+        "description": "Creates a symbolic link from public/storage to storage/app/public for file uploads."
+      },
+      {
+        "command": "php artisan optimize",
+        "description": "Optimizes the framework by caching routes, config, and views."
+      },
+      {
+        "command": "php artisan down",
+        "description": "Puts the application into maintenance mode."
+      },
+      {
+        "command": "php artisan up",
+        "description": "Brings the application out of maintenance mode."
+      },
+      {
+        "command": "php artisan make:request RequestName",
+        "description": "Generates a new form request class for validating incoming data."
+      }
+    ]
+  }
+  

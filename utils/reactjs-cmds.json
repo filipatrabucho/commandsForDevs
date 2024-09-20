@@ -1,0 +1,45 @@
+{
+    "commands": [
+      {
+        "command": "npx create-react-app my-app",
+        "description": "Create a new React application named 'my-app'."
+      },
+      {
+        "command": "npm start",
+        "description": "Start the React application in development mode."
+      },
+      {
+        "command": "npm run build",
+        "description": "Build the React application for production."
+      },
+      {
+        "command": "npm test",
+        "description": "Run tests for the React application."
+      },
+      {
+        "command": "npm install [package]",
+        "description": "Install a specific package into the project."
+      },
+      {
+        "command": "npm uninstall [package]",
+        "description": "Remove a specific package from the project."
+      },
+      {
+        "command": "npm run eject",
+        "description": "Eject the app to gain full control over the configuration."
+      },
+      {
+        "command": "npx react-scripts test",
+        "description": "Run tests using React scripts."
+      },
+      {
+        "command": "npx serve -s build",
+        "description": "Serve the production build of the application."
+      },
+      {
+        "command": "npm run lint",
+        "description": "Run linting to check for code quality issues."
+      }
+    ]
+  }
+  

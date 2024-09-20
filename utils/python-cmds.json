@@ -1,0 +1,45 @@
+{
+    "commands": [
+      {
+        "command": "python script.py",
+        "description": "Run a Python script named 'script.py'."
+      },
+      {
+        "command": "pip install package",
+        "description": "Install a package using pip."
+      },
+      {
+        "command": "pip uninstall package",
+        "description": "Uninstall a package using pip."
+      },
+      {
+        "command": "python -m venv env",
+        "description": "Create a virtual environment named 'env'."
+      },
+      {
+        "command": "source env/bin/activate",
+        "description": "Activate the virtual environment on Unix or MacOS."
+      },
+      {
+        "command": "env\\Scripts\\activate",
+        "description": "Activate the virtual environment on Windows."
+      },
+      {
+        "command": "python -m pip freeze",
+        "description": "List installed packages in the current environment."
+      },
+      {
+        "command": "python -m pip install -r requirements.txt",
+        "description": "Install packages from a requirements file."
+      },
+      {
+        "command": "python -m http.server",
+        "description": "Start a simple HTTP server."
+      },
+      {
+        "command": "python -m unittest",
+        "description": "Run unit tests in the current directory."
+      }
+    ]
+  }
+  

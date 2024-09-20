@@ -1,0 +1,45 @@
+{
+    "commands": [
+      {
+        "command": "node script.js",
+        "description": "Run a JavaScript file using Node.js."
+      },
+      {
+        "command": "npm init",
+        "description": "Initialize a new Node.js project."
+      },
+      {
+        "command": "npm install package",
+        "description": "Install a package using npm."
+      },
+      {
+        "command": "npm uninstall package",
+        "description": "Uninstall a package using npm."
+      },
+      {
+        "command": "npm start",
+        "description": "Start the application defined in package.json."
+      },
+      {
+        "command": "npm run build",
+        "description": "Build the project for production."
+      },
+      {
+        "command": "npm test",
+        "description": "Run tests defined in the project."
+      },
+      {
+        "command": "npx create-react-app my-app",
+        "description": "Create a new React application named 'my-app'."
+      },
+      {
+        "command": "node -v",
+        "description": "Check the version of Node.js installed."
+      },
+      {
+        "command": "npm audit",
+        "description": "Check for vulnerabilities in dependencies."
+      }
+    ]
+  }
+  
