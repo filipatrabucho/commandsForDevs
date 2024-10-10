@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commands for devs.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Left section: Title -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="text-xl font-bold text-[#B8D6CC] hover:text-[#B8D6CC]">
+            Commands for devs.
+          </a>
+        </div>
+  
+        <!-- Mobile menu button -->
+        <div class="flex items-center sm:hidden">
+          <button id="menu-toggle" class="text-gray-900 hover:text-[#B8D6CC] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Right section: NavLinks -->
+        <div class="hidden sm:flex sm:items-center">
+          <a href="/laravel.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Laravel</a>
+          <a href="/reactjs.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Reactjs</a>
+          <a href="/python.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Python</a>
+          <a href="/javascript.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Javascript</a>
+          <a href="/git.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Git</a>
+          <a href="/mysql.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Mysql</a>
+          <a href="/support.html" class="ml-6 text-black hover:text-[#B8D6CC] font-medium">Support</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden sm:hidden">
+      <a href="/laravel.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Laravel</a>
+      <a href="/reactjs.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Reactjs</a>
+      <a href="/python.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Python</a>
+      <a href="/javascript.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Javascript</a>
+      <a href="/git.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Git</a>
+      <a href="/mysql.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Mysql</a>
+      <a href="/support.html" class="block px-4 py-2 text-black hover:bg-[#B8D6CC]">Support</a>
+    </div>
+  </nav>
+
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-[#B8D6CC]">Mysql Commands</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Essential Commands</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Below are some of the most important Mysql commands for your application development.</p>
+        </div>
+
+        <!-- Search bar -->
+        <div class="mx-auto mt-8 max-w-xl">
+            <input type="text" id="search-bar" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#B8D6CC] focus:ring-[#B8D6CC] sm:text-sm p-3" placeholder="Search for a command...">
+        </div>
+
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" id="commands-list">
+            </dl>
+        </div>
+    </div>
+   </div>
+
+
+  
+  <footer class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center items-center h-16">
+        <p class="text-gray-700 text-center">
+          Created by Ana and ChatGPT. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <script>
+    const icons = [
+        `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>`
+    ];
+
+    let commandsData = [];
+
+    // Fetch the Javascript commands from an external JSON file
+    fetch('./utils/mysql-cmds.json')
+        .then(response => response.json())
+        .then(data => {
+            commandsData = data.commands; // Save the data for future filtering
+            displayCommands(commandsData); // Display all commands initially
+        })
+        .catch(error => console.error('Error fetching the JSON:', error));
+
+    // Function to render the commands in the HTML
+    function displayCommands(commands) {
+        const commandsList = document.getElementById('commands-list');
+        commandsList.innerHTML = ''; // Clear previous results
+
+        // Iterate through the commands and generate the HTML structure dynamically
+        commands.forEach((command, index) => {
+            const commandItem = `
+                <div class="relative pl-16">
+                    <dt class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#B8D6CC]">
+                            ${icons[index % icons.length]}
+                        </div>
+                        ${command.command}
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-600">${command.description}</dd>
+                </div>
+            `;
+            commandsList.insertAdjacentHTML('beforeend', commandItem);
+        });
+    }
+
+    // Search filter functionality
+    const searchBar = document.getElementById('search-bar');
+    searchBar.addEventListener('input', function () {
+        const searchText = this.value.toLowerCase();
+        const filteredCommands = commandsData.filter(command =>
+            command.command.toLowerCase().includes(searchText)
+        );
+        displayCommands(filteredCommands); // Re-display the filtered commands
+    });
+</script>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

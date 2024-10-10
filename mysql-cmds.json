@@ -1,0 +1,69 @@
+{
+    "commands": [
+      {
+        "command": "CREATE DATABASE my_database;",
+        "description": "Creates a new database named 'my_database'."
+      },
+      {
+        "command": "DROP DATABASE my_database;",
+        "description": "Deletes the database named 'my_database'."
+      },
+      {
+        "command": "USE my_database;",
+        "description": "Selects 'my_database' to use for subsequent operations."
+      },
+      {
+        "command": "CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100));",
+        "description": "Creates a 'users' table with id, name, and email columns."
+      },
+      {
+        "command": "DROP TABLE users;",
+        "description": "Deletes the 'users' table."
+      },
+      {
+        "command": "INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');",
+        "description": "Adds a new user named 'John Doe' with the email 'john@example.com'."
+      },
+      {
+        "command": "SELECT * FROM users;",
+        "description": "Retrieves all data from the 'users' table."
+      },
+      {
+        "command": "UPDATE users SET email = 'john.doe@example.com' WHERE name = 'John Doe';",
+        "description": "Updates the email of 'John Doe' to 'john.doe@example.com'."
+      },
+      {
+        "command": "DELETE FROM users WHERE name = 'John Doe';",
+        "description": "Removes 'John Doe' from the 'users' table."
+      },
+      {
+        "command": "ALTER TABLE users ADD COLUMN age INT;",
+        "description": "Adds an 'age' column to the 'users' table."
+      },
+      {
+        "command": "SELECT * FROM users JOIN orders ON users.id = orders.user_id;",
+        "description": "Combines data from 'users' and 'orders' tables based on user ID."
+      },
+      {
+        "command": "SELECT * FROM users WHERE email LIKE '%@example.com';",
+        "description": "Retrieves users with email addresses ending in '@example.com'."
+      },
+      {
+        "command": "SELECT * FROM users ORDER BY name ASC;",
+        "description": "Retrieves users sorted by name in ascending order."
+      },
+      {
+        "command": "SELECT COUNT(*) FROM users GROUP BY email;",
+        "description": "Counts users grouped by email addresses."
+      },
+      {
+        "command": "SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1;",
+        "description": "Finds email addresses that appear more than once in the 'users' table."
+      },
+      {
+        "command": "CREATE INDEX idx_email ON users (email);",
+        "description": "Creates an index on the 'email' column of the 'users' table."
+      }
+    ]
+  }
+  
